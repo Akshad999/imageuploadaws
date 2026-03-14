@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Preview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7f6;
+    margin: 0;
+}
+
+.upload-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 350px;
+}
+
+.drop-zone {
+    height: 150px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #009578;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.drop-zone:hover {
+    background: #f0fdfa;
+}
+
+.drop-zone__input {
+    display: none;
+}
+
+.preview-container {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+    overflow: hidden;
+}
+
+.image-preview__image {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+</style>
+<body>
+
+    <div class="upload-container">
+        <h2>Upload Your Image</h2>
+        
+        <div class="drop-zone" id="drop-zone">
+            <span class="drop-zone__prompt">Drop file here or click to upload</span>
+            <input type="file" name="myFile" class="drop-zone__input" id="imageInput" accept="image/*">
+        </div>
+
+        <div class="preview-container">
+            <img src="" alt="Image Preview" class="image-preview__image" id="imagePreview">
+            <span class="image-preview__default-text" id="previewText">No image selected</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
